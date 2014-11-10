@@ -14,6 +14,7 @@
 		9CA23DC71A1033D600EDB61E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CA23DC61A1033D600EDB61E /* Images.xcassets */; };
 		9CA23DCA1A1033D600EDB61E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CA23DC81A1033D600EDB61E /* LaunchScreen.xib */; };
 		9CA23DD61A1033D700EDB61E /* NSCodingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA23DD51A1033D700EDB61E /* NSCodingTests.m */; };
+		9CA23DE61A1036D500EDB61E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA23DE51A1036D500EDB61E /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		9CA23DCF1A1033D700EDB61E /* NSCodingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSCodingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA23DD41A1033D700EDB61E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CA23DD51A1033D700EDB61E /* NSCodingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSCodingTests.m; sourceTree = "<group>"; };
+		9CA23DE41A1036D500EDB61E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		9CA23DE51A1036D500EDB61E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +84,11 @@
 		9CA23DB81A1033D600EDB61E /* NSCoding */ = {
 			isa = PBXGroup;
 			children = (
-				9CA23DBD1A1033D600EDB61E /* AppDelegate.h */,
-				9CA23DBE1A1033D600EDB61E /* AppDelegate.m */,
-				9CA23DC01A1033D600EDB61E /* ViewController.h */,
-				9CA23DC11A1033D600EDB61E /* ViewController.m */,
-				9CA23DC31A1033D600EDB61E /* Main.storyboard */,
-				9CA23DC61A1033D600EDB61E /* Images.xcassets */,
-				9CA23DC81A1033D600EDB61E /* LaunchScreen.xib */,
+				9CA23DE31A10345700EDB61E /* Classes */,
+				9CA23DE21A10344900EDB61E /* Images */,
+				9CA23DE11A10343D00EDB61E /* Controllers */,
+				9CA23DE01A10342600EDB61E /* User Interface */,
+				9CA23DDF1A10341700EDB61E /* Root */,
 				9CA23DB91A1033D600EDB61E /* Supporting Files */,
 			);
 			path = NSCoding;
@@ -117,6 +118,50 @@
 				9CA23DD41A1033D700EDB61E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9CA23DDF1A10341700EDB61E /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				9CA23DBD1A1033D600EDB61E /* AppDelegate.h */,
+				9CA23DBE1A1033D600EDB61E /* AppDelegate.m */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
+		9CA23DE01A10342600EDB61E /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				9CA23DC31A1033D600EDB61E /* Main.storyboard */,
+				9CA23DC81A1033D600EDB61E /* LaunchScreen.xib */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		9CA23DE11A10343D00EDB61E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9CA23DC01A1033D600EDB61E /* ViewController.h */,
+				9CA23DC11A1033D600EDB61E /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9CA23DE21A10344900EDB61E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9CA23DC61A1033D600EDB61E /* Images.xcassets */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		9CA23DE31A10345700EDB61E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9CA23DE41A1036D500EDB61E /* User.h */,
+				9CA23DE51A1036D500EDB61E /* User.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA23DE61A1036D500EDB61E /* User.m in Sources */,
 				9CA23DC21A1033D600EDB61E /* ViewController.m in Sources */,
 				9CA23DBF1A1033D600EDB61E /* AppDelegate.m in Sources */,
 				9CA23DBC1A1033D600EDB61E /* main.m in Sources */,
@@ -344,6 +390,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NSCoding/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,6 +401,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NSCoding/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

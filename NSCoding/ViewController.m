@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "User.h"
+
+#define KEY_USER                @"user"
 
 @interface ViewController ()
 
@@ -14,14 +17,46 @@
 
 @implementation ViewController
 
+#pragma mark - Initialization
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UI Actions
+- (IBAction)login:(id)sender {
+
+    // reject null username or password
+    if (self.username.text.length<=0 || self.password.text.length<=0) {
+        return;
+    }
+
+    // Create username/password if username doesn't exist!
+    [self addUserWithUser:[[User alloc]initWithUsername:self.username.text password:self.password.text]];
+    
+    
+}
+
+
+#pragma mark - User Object Methods
+-(void)addUserWithUser:(User *)user {
+    // Create NSData object
+    NSData *userData=[NSKeyedArchiver archivedDataWithRootObject:user];
+    
+    // Save it to NSUSerDefaults
+    [[NSUserDefaults standardUserDefaults] setObject:userData forKey:KEY_USER];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
+-(User *)getUser {
+    
+    // Retrieve NSData object
+    
+    // Transform it into User Object
+    
+    
+    return nil;
 }
 
 @end
