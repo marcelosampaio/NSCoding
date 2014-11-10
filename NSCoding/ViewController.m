@@ -24,6 +24,17 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // Show username and password data
+    User *user=[[User alloc]init];
+    user=[self getUser];
+    self.username.text=user.username;
+    self.password.text=user.password;
+    
+}
+
 #pragma mark - UI Actions
 - (IBAction)login:(id)sender {
 
@@ -52,11 +63,13 @@
 -(User *)getUser {
     
     // Retrieve NSData object
+    NSData *userData=[[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER];
     
     // Transform it into User Object
+    User *user=[NSKeyedUnarchiver unarchiveObjectWithData:userData];
     
-    
-    return nil;
+    return user;
 }
+
 
 @end
