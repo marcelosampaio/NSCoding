@@ -17,11 +17,9 @@
 
 @implementation ViewController
 
-#pragma mark - Initialization
+#pragma mark - View Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -32,8 +30,7 @@
     user=[self getUser];
     self.username.text=user.username;
     self.password.text=user.password;
-    
-    NSLog(@"viewWilAppear *****");
+
 }
 
 #pragma mark - UI Actions
@@ -47,7 +44,8 @@
     // Create username/password if username doesn't exist!
     [self addUserWithUser:[[User alloc]initWithUsername:self.username.text password:self.password.text]];
     
-    
+    UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Succesful Transaction!" message:@"Data has been stored." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];
 }
 
 
@@ -77,7 +75,6 @@
     if (self.username.text.length<=0 || self.password.text.length<=0) {
         return NO;
     }
-    
     return YES;
 }
 

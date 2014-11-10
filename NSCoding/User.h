@@ -15,5 +15,7 @@
 
 
 - (id)initWithUsername:(NSString *)p_username password:(NSString *)p_password;
+-(id)initWithCoder:(NSCoder *)aDecoder;
+-(void)encodeWithCoder:(NSCoder *)aCoder;
 
 @end
