@@ -33,13 +33,14 @@
     self.username.text=user.username;
     self.password.text=user.password;
     
+    NSLog(@"viewWilAppear *****");
 }
 
 #pragma mark - UI Actions
 - (IBAction)login:(id)sender {
 
-    // reject null username or password
-    if (self.username.text.length<=0 || self.password.text.length<=0) {
+    // Data Entry check
+    if (![self isValidDataEntry]) {
         return;
     }
 
@@ -56,7 +57,7 @@
     NSData *userData=[NSKeyedArchiver archivedDataWithRootObject:user];
     
     // Save it to NSUSerDefaults
-    [[NSUserDefaults standardUserDefaults] setObject:userData forKey:KEY_USER];
+    [[NSUserDefaults standardUserDefaults]setObject:userData forKey:KEY_USER];
     [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
@@ -69,6 +70,15 @@
     User *user=[NSKeyedUnarchiver unarchiveObjectWithData:userData];
     
     return user;
+}
+
+#pragma mark - Working Methods
+-(BOOL)isValidDataEntry {
+    if (self.username.text.length<=0 || self.password.text.length<=0) {
+        return NO;
+    }
+    
+    return YES;
 }
 
 
