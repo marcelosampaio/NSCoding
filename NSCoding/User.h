@@ -14,7 +14,7 @@
 @property (nonatomic,strong) NSString *password;
 
 
-- (id)initWithUsername:(NSString *)p_username password:(NSString *)p_password;
+-(id)initWithUsername:(NSString *)p_username password:(NSString *)p_password;
 -(id)initWithCoder:(NSCoder *)aDecoder;
 -(void)encodeWithCoder:(NSCoder *)aCoder;
 

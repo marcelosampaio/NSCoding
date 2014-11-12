@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C8E205E1A13E15C0054E8A2 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E205D1A13E15C0054E8A2 /* Settings.m */; };
 		9CA23DBC1A1033D600EDB61E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA23DBB1A1033D600EDB61E /* main.m */; };
 		9CA23DBF1A1033D600EDB61E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA23DBE1A1033D600EDB61E /* AppDelegate.m */; };
 		9CA23DC21A1033D600EDB61E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA23DC11A1033D600EDB61E /* ViewController.m */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C8E205C1A13E15C0054E8A2 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		9C8E205D1A13E15C0054E8A2 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		9CA23DB61A1033D600EDB61E /* NSCoding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSCoding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA23DBA1A1033D600EDB61E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CA23DBB1A1033D600EDB61E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 			children = (
 				9CA23DE41A1036D500EDB61E /* User.h */,
 				9CA23DE51A1036D500EDB61E /* User.m */,
+				9C8E205C1A13E15C0054E8A2 /* Settings.h */,
+				9C8E205D1A13E15C0054E8A2 /* Settings.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 			files = (
 				9CA23DE61A1036D500EDB61E /* User.m in Sources */,
 				9CA23DC21A1033D600EDB61E /* ViewController.m in Sources */,
+				9C8E205E1A13E15C0054E8A2 /* Settings.m in Sources */,
 				9CA23DBF1A1033D600EDB61E /* AppDelegate.m in Sources */,
 				9CA23DBC1A1033D600EDB61E /* main.m in Sources */,
 			);
@@ -460,6 +466,7 @@
 				9CA23DDB1A1033D700EDB61E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9CA23DDC1A1033D700EDB61E /* Build configuration list for PBXNativeTarget "NSCodingTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +475,7 @@
 				9CA23DDE1A1033D700EDB61E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

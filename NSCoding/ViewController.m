@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "User.h"
 
+
 #define KEY_USER                @"user"
 
 @interface ViewController ()
@@ -17,9 +18,13 @@
 
 @implementation ViewController
 
+@synthesize settings;
+
+
 #pragma mark - View Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.settings=[[Settings alloc]init];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -27,7 +32,7 @@
     
     // Show username and password data
     User *user=[[User alloc]init];
-    user=[self getUser];
+    user=[self.settings getUser];
     self.username.text=user.username;
     self.password.text=user.password;
 
@@ -42,33 +47,12 @@
     }
 
     // Create username/password if username doesn't exist!
-    [self addUserWithUser:[[User alloc]initWithUsername:self.username.text password:self.password.text]];
-    
+    [self.settings addUserWithUser:[[User alloc]initWithUsername:self.username.text password:self.password.text]];
+
     UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Succesful Transaction!" message:@"Data has been stored." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alertView show];
 }
 
-
-#pragma mark - User Object Methods
--(void)addUserWithUser:(User *)user {
-    // Create NSData object
-    NSData *userData=[NSKeyedArchiver archivedDataWithRootObject:user];
-    
-    // Save it to NSUSerDefaults
-    [[NSUserDefaults standardUserDefaults]setObject:userData forKey:KEY_USER];
-    [[NSUserDefaults standardUserDefaults]synchronize];
-}
-
--(User *)getUser {
-    
-    // Retrieve NSData object
-    NSData *userData=[[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER];
-    
-    // Transform it into User Object
-    User *user=[NSKeyedUnarchiver unarchiveObjectWithData:userData];
-    
-    return user;
-}
 
 #pragma mark - Working Methods
 -(BOOL)isValidDataEntry {

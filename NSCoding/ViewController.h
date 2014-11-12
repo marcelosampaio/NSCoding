@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Settings.h"
 
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 
-
+@property (nonatomic,strong) Settings *settings;
 
 @end
 
